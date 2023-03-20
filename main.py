@@ -1,5 +1,6 @@
 # Global variables -----------------------------------------------------------
 import sys
+import random
 map = [
   ["Enemy", "Empty", "Discover", "Merchant"],
   ["Empty", "Empty", "Start", "Discover"],
@@ -104,21 +105,49 @@ while True:
   elif current_location == "NewEmpty":
     print("\nNothing to see here\n")
     
-  elif current_location == "Discover" :
-    print("\nYou found a legendary item, would you like you pick it up?") 
+  elif current_location == "Discover" : 
+    print("\nYou found a point of discovery!")
+    print("Would you like to explore it?")
     print("- yes")
     print("- no")
     conformation = input("Action: ")
     if conformation.lower() == "yes":
-      print("\nbehold [ROCK]\n")
-      object.append('ROCK')
-      number_of_objects += 1
-      map[row][col] = "NewEmpty"
-    elif conformation.lower() == "no":
-      print("Thats too bad")
-    else:
-      print("Invalid")
-  
+      if random.randint(0,4) == 0:
+        print("\nyou found a unlocked treasure chest.")
+        print("unfortunatly it's empty.\n")
+        map[row][col] = "NewEmpty"
+
+      if random.randint(0,4) == 1:
+        print("\nYou found a random key. Congrats! \(0o0)/")
+        object.append('Key')
+        number_of_objects += 1
+        map[row][col] = "NewEmpty"
+
+      if random.randint(0,4) == 2:
+        print("You found a rusted short sword. Let's keep it!")
+        weapon.append('Rusted short sword')
+        number_of_weapons += 1
+        map[row][col] = "NewEmpty"
+
+      if random.randint(0,4) == 3:
+        print("You found a locked treasure chest!")
+        if object 
+          print("you use a key.\n")
+          print("\nyou found an artifact of the old world.")
+          print("You dont seem strong enouch to use it's power.")
+          print("Maybe leveling up will work.\n")
+        if object
+          print("You need a key to open this!")
+        
+      if random.randint(0,4) == 4:
+        print("\nYou found a legendary item, ROCK.") 
+        object.append('ROCK')
+        number_of_objects += 1
+        map[row][col] = "NewEmpty"
+    if conformation.lower() == "no":
+      print("\nAlrighty!\n")
+    
+      
   elif current_location == "Merchant" :
     print("\nyou spot a merchant.") 
     print('"Ah, traveler. welcome to my shop."') 
