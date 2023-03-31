@@ -21,3 +21,13 @@ update - games name
 *fix - how room descriptions print in the game
 *add - another dictionary (for a character or object)
 *add - empty inventory list
+
+v2.1
+Name: RPG - GameVersionTwoIGuess?
+added - additional inventory things
+Fixed - error message
+
+v2.7
+Combat
+
+https://docs.google.com/document/d/1qYfjLFj2xzgQ3506NRAKfaMwgdfWLKl63rSjNAFByJE/edit
